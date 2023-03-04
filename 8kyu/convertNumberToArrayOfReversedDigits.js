@@ -7,10 +7,6 @@ Example(Input => Output):
 0 => [0]
 */
 
-
-
-
-
 // My solution
 function digitize(n) {
     return  n = 0 ? [n] :  n = n.toString()
