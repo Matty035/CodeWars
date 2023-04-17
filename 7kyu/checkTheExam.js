@@ -17,23 +17,34 @@ checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
 
 //My solution
 
-function checkExam(array1, array2) { 
-    let score = 0
+// function checkExam(array1, array2) { 
+//     let score = 0
     
-    array1.forEach((v,i,a) => {
-      if(a[i] === array2[i]){
-        score+= 4
-      }else if(array2[i] == ''){
-        score += 0
-      }else if(a[i] !== array2[i]){
-        score -= 1
-      }
-    })
+//     array1.forEach((v,i,a) => {
+//       if(a[i] === array2[i]){
+//         score+= 4
+//       }else if(array2[i] == ''){
+//         score += 0
+//       }else if(a[i] !== array2[i]){
+//         score -= 1
+//       }
+//     })
     
-    if(score < 0){
-      return 0
-    }
+//     if(score < 0){
+//       return 0
+//     }
     
-    return score
+//     return score
     
-  }
+//   }
+
+function checkExam(array1,array2){
+
+  let result = array2.reduce((acc, cur, i) => {
+    if(cur === array1[i]) return acc+= 4
+    else if(cur === '') return acc
+    else return acc -= 1
+  },0)
+
+ return result > 0 ? result : 0 
+}
