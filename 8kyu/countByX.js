@@ -22,3 +22,10 @@ function countX(n,x){
     }
     return z
 }
+
+// Refactored solution
+function countBy(x, n){
+    return Array.from({length: n}, (v,i) => {
+       return (i + 1) * x
+    })
+}
